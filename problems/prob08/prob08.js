@@ -15,16 +15,10 @@ function insert(input, _split, res) {
     res.push(line)
     return insert(input.substring(next), _split, res)
 }
-
-// function foldRgx(s, n) {
-//     var rgx = new RegExp('.{0,' + n + '}', 'g');
-//     return s.match(rgx);
-// }
-
     
 function init(){
 	let details = fs.readFileSync(`${__dirname}/input.txt`,'utf8')
-	let line = details.trim(),
+	let line = details.trim().replace(/\n/gi, ''),
 		altered = new Array
 
 	insert(line, 80, altered)

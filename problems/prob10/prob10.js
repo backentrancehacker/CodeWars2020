@@ -28,11 +28,13 @@ function init(){
 	let index = 0,
 		mode
 
+	fill: 
 	while(index < tokens.length - 1){
 		let token = tokens[index]
 		mode = token.match(/NOUNS|ADVERBS|VERBS|ADJECTIVES/) ? token : mode
 		if(token != mode)
 			tree[mode].push(token)
+		if(token == 'END') break fill
 		index++
 	}
 
