@@ -16,9 +16,7 @@ function init(){
 
 		if(even(altered.length)) result = 'no'
 
-
 		console.log(`${number} ${result}`)
 	}
 }
-
 init()
