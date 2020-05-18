@@ -1,7 +1,7 @@
-const fs = require('fs').promises
+const fs = require('fs')
 
-async function init(){
-	let details = await fs.readFile(`${__dirname}/input.txt`,'utf8')
+function init(){
+	let details = fs.readFileSync(`${__dirname}/input.txt`,'utf8')
 
 	let lines = details.split('\n').map(inp => inp.trim()).filter(inp => inp.length)
 	for(let i = 0; i < lines.length - 3; i++){

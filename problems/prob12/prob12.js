@@ -1,11 +1,11 @@
-const fs = require('fs').promises
+const fs = require('fs')
 
 const convertY = yards => (parseInt(yards) * 3 * 0.3048 * 100)
 const convertF = feet => (parseInt(feet) * 0.3048 * 100)
 const convertI = inches => (parseInt(inches) * 2.54)
 
-async function init(){
-	let details = await fs.readFile(`${__dirname}/input.txt`,'utf8')
+function init(){
+	let details = fs.readFileSync(`${__dirname}/input.txt`,'utf8')
 
 	let lines = details.split('\n').map(inp => inp.trim()).filter(inp => inp.length)
 

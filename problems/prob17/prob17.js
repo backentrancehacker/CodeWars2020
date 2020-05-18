@@ -1,4 +1,4 @@
-const fs = require('fs').promises
+const fs = require('fs')
 class City{
 	constructor(name){
 		this.name = name
@@ -30,8 +30,8 @@ class City{
 		else console.log(`City ${this.name} is remote and has no neighbours!`)
 	}
 }
-async function init(){
-	let details = await fs.readFile(`${__dirname}/input.txt`,'utf8')
+function init(){
+	let details = fs.readFileSync(`${__dirname}/input.txt`,'utf8')
 
 	let lines = details.split('\n').map(inp => inp.trim()).filter(inp => inp.length)
 

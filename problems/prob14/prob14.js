@@ -1,4 +1,4 @@
-const fs = require('fs').promises
+const fs = require('fs')
 const determine = num => (num % 2 == 0 )
 
 const obj = val => (
@@ -10,8 +10,8 @@ const obj = val => (
 	}
 )
 
-async function init(){
-	let details = await fs.readFile(`${__dirname}/input.txt`,'utf8')
+function init(){
+	let details = fs.readFileSync(`${__dirname}/input.txt`,'utf8')
 
 	let lines = details.split('\n').map(inp => inp.trim()).filter(inp => inp.length)
 

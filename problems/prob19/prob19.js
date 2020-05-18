@@ -1,4 +1,4 @@
-const fs = require('fs').promises
+const fs = require('fs')
 
 const convert = input => {
 	let output = []
@@ -24,8 +24,8 @@ const decrypt = input => {
 	console.log(secret)
 	// console.log(revert(part.join('.')))
 }
-async function init(){
-	let details = await fs.readFile(`${__dirname}/input.txt`,'utf8')
+function init(){
+	let details = await fs.readFileSync(`${__dirname}/input.txt`,'utf8')
 
 	let lines = details.split('\n').map(inp => inp.trim()).filter(inp => inp.length)
 	decrypt(lines[0])

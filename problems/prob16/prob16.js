@@ -1,4 +1,4 @@
-const fs = require('fs').promises
+const fs = require('fs')
 
 const operators = {
 	MULTIPLY: '*',
@@ -11,9 +11,8 @@ function num(_float, _digits){
 	let rounded = Math.pow(10, _digits);
 	return (Math.round(parseFloat(_float) * rounded) / rounded).toFixed(_digits);
 }
-
-async function init(){
-	let details = await fs.readFile(`${__dirname}/input.txt`,'utf8')
+function init(){
+	let details = fs.readFileSync(`${__dirname}/input.txt`,'utf8')
 
 	let lines = details.split('\n').map(inp => inp.trim()).filter(inp => inp.length)
 
