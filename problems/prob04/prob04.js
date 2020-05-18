@@ -12,7 +12,6 @@ function factor(a, b){
 function init(){
 	let details = fs.readFileSync(`${__dirname}/input.txt`,'utf8')
 	let lines = details.split('\n').map(inp => inp.trim()).filter(inp => inp.length)
-	console.log(factor.apply(null, lines))
-
+	console.log(Math.abs(lines[0]) * Math.abs(lines[1]) / factor.apply(null, lines))
 }
 init()
