@@ -62,11 +62,10 @@ function init(){
 		}
 		else {
 			let map = {}
-			let cache
+			let prev
 			for(let i = 1; i < parts.length; i ++){
-				let current = parts[i],
-					prev = parts[i - 1] || false
-					cache = current
+				let current = parts[i]
+					prev = parts[i - 1] || prev
 
 				if(TOPPINGS.hasOwnProperty(current)){
 					map[current] = prev
@@ -79,8 +78,7 @@ function init(){
 					map[key] = map[current]
 				}
 				tree[key] = (tree[key] || 0) + (TOPPINGS[key] * mult * eval(map[key]))
-			}
-			
+			}			
 		}
 	}
 	for(let key in tree) if(key != 'None') console.log(`${key.replace('_', ' ')}: ${tree[key]}`)
