@@ -1,0 +1,4 @@
+6000 3
+Phone-case 1486
+Sunglasses 5529
+Candybar 863
