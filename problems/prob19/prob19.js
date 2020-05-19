@@ -25,7 +25,7 @@ const decrypt = input => {
 	// console.log(revert(part.join('.')))
 }
 function init(){
-	let details = await fs.readFileSync(`${__dirname}/input.txt`,'utf8')
+	let details = fs.readFileSync(`${__dirname}/input.txt`,'utf8')
 
 	let lines = details.split('\n').map(inp => inp.trim()).filter(inp => inp.length)
 	decrypt(lines[0])
