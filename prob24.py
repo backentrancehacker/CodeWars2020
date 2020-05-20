@@ -7,7 +7,7 @@ finishedWords = []
 words = {}
 possibleWords = []
 
-file = open('in.in', 'r')
+file = open('input.txt', 'r')
 lines = file.readlines()
 file.close()
 line = 0
